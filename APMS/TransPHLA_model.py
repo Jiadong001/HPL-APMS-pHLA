@@ -1,3 +1,7 @@
+"""
+copy form https://github.com/a96123155/TransPHLA-AOMP/blob/master/TransPHLA-AOMP/model.py
+"""
+
 import math
 from sklearn import metrics
 from sklearn import preprocessing

@@ -27,12 +27,12 @@ Check `requirements.txt` or set up a Python environment with the listed packages
 - tape-proteins==0.5
   - TAPE model, a protein pre-trained language model used in our study, details see [the source repo](https://github.com/songlab-cal/tape)
 - transformers==4.22.1
-  - **[Optional]** You can install it if you want to use other protein pre-trained language models, like [ProtBERT](https://github.com/agemagician/ProtTrans)
+  - **[Optional]** You can install it if you want to use other pre-trained protein language models, like [ProtBERT](https://github.com/agemagician/ProtTrans)
 
 
 ### Data download
 
-We've saved all the study data on [Google Drive `to be update`](). You can download and store it wherever you like. **Just remember to update the `datapath` or `data_path` variable in the code with the correct path!**
+We've saved all data in [Google Drive `to be update`](). You can download and store it wherever you prefer. **Just remember to update the `datapath` or `data_path` variable in the code with the correct path!**
 
 <details>
   <summary>View the source and purpose of each downloaded document by clicking here.</summary>
@@ -57,7 +57,7 @@ We've saved all the study data on [Google Drive `to be update`](). You can downl
   |`hla_seq_dict.csv`|HLA name and corresponding full/clip sequence: common classical HLA alleles||
   |`HLA_sequence_dict.csv`|HLA name and corresponding full/clip/short(pseudo) sequence: common classical HLA alleles||
   |`HLA_sequence_dict_new.csv`|HLA name and corresponding full/clip/short(pseudo) sequence: common classical and zero-shot non-classical HLA alleles||
-  |`HLA_sequence_dict_ABCEG.csv`|HLA name and corresponding full/clip/short(pseudo) sequence: common classical, zero-shot classical and zero-shot non-classical HLA alleles||
+  |`HLA_sequence_dict_ABCEG.csv`|HLA name and corresponding full/clip/short(pseudo) sequence: **common classical**, **zero-shot classical** and **zero-shot non-classical** HLA alleles||
   |`IEDB_negative_segments.npy`|negative peptides extracted from all possible peptide segments from the exported IEDB HLA immunopeptidome dataset|`./Data_preprocess/build_candidate_pools.ipynb`|
   |`allele2candidate_pools.npy`|possible candidate peptide segments for each common classical HLA allele|`./Data_preprocess/build_candidate_pools.ipynb`|
   |`allele2positive_segs.npy`|all possible peptide segments of positive peptides for each common classical HLA allele|`./Data_preprocess/build_candidate_pools.ipynb`|
@@ -78,6 +78,7 @@ We've saved all the study data on [Google Drive `to be update`](). You can downl
 > - We denote the HLA alleles observed in model training as **common classical** HLA alleles since they are all commonly used in previous studies and classical (i.e., HLA-A/B/C).
 > - We call classical HLA alleles not seen in training as **zero-shot classical** HLA alleles, which are all from [a recent study [a large peptidome...]](http://www.nature.com/articles/s41587-019-0322-9)
 > - Because non-classical HLA alleles (i.e., HLA-E/F/G) are not included in the model training, we refer to them as **zero-shot non-classical** HLA alleles.
+> - Build Negative peptide pool: see ``Data_preprocess/build_candidate_pools.ipynb``
 
 ## Usage
 
