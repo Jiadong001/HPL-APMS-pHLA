@@ -32,7 +32,7 @@ Check `requirements.txt` or set up a Python environment with the listed packages
 
 ### Data download
 
-We've saved all data in [Google Drive `to be update`](). You can download and store it wherever you prefer. **Just remember to update the `datapath` or `data_path` variable in the code with the correct path!**
+We've uploaded all the data to [Google Drive](https://drive.google.com/drive/folders/15EHFjg9ApcjaXWLMnhhJw9i_Qb4-VWQ_?usp=sharing). You can download and store it wherever you prefer. **Just remember to update the `datapath` or `data_path` variable in the code with the correct path!**
 
 <details>
   <summary>View the source and purpose of each downloaded document by clicking here.</summary>
@@ -54,19 +54,16 @@ We've saved all data in [Google Drive `to be update`](). You can download and st
   |:-:|:-:|:-:|
   |`train_data_fold4.csv`<br>`val_data_fold4.csv`|training dataset, common classical HLA alleles, consistent with TransPHLA|[TransPHLA repo](https://github.com/a96123155/TransPHLA-AOMP)|
   |`independent.csv`|testing dataset, common classical HLA alleles, consistent with TransPHLA|[TransPHLA repo](https://github.com/a96123155/TransPHLA-AOMP)|
-  |`hla_seq_dict.csv`|HLA name and corresponding full/clip sequence: common classical HLA alleles||
-  |`HLA_sequence_dict.csv`|HLA name and corresponding full/clip/short(pseudo) sequence: common classical HLA alleles||
-  |`HLA_sequence_dict_new.csv`|HLA name and corresponding full/clip/short(pseudo) sequence: common classical and zero-shot non-classical HLA alleles||
-  |`HLA_sequence_dict_ABCEG.csv`|HLA name and corresponding full/clip/short(pseudo) sequence: **common classical**, **zero-shot classical** and **zero-shot non-classical** HLA alleles||
+  |`HLA_sequence_dict_ABCEG.csv`<br>(old versions:<br>`hla_seq_dict.csv`,<br>`HLA_sequence_dict_new.csv`,<br>`HLA_sequence_dict_new.csv`)|HLA name and corresponding full/clip/short(pseudo) sequence: **common classical**, **zero-shot classical** and **zero-shot non-classical** HLA alleles||
   |`IEDB_negative_segments.npy`|negative peptides extracted from all possible peptide segments from the exported IEDB HLA immunopeptidome dataset|`./Data_preprocess/build_candidate_pools.ipynb`|
   |`allele2candidate_pools.npy`|possible candidate peptide segments for each common classical HLA allele|`./Data_preprocess/build_candidate_pools.ipynb`|
   |`allele2positive_segs.npy`|all possible peptide segments of positive peptides for each common classical HLA allele|`./Data_preprocess/build_candidate_pools.ipynb`|
   |`zeroshot_set.csv`|zero-shot non-classical dataset|`./Data_preprocess/prepare_EG_peptides.ipynb`|
-  |`zeroshot_allele2candidate_pools.npy`|possible candidate peptide segments for each zero-shot non-classical HLA allele|`./Data_preprocess/build_candidate_pools.ipynb`|
-  |`zeroshot_allele2positive_segs.npy`|all possible peptide segments of positive peptides for each zero-shot non-classical HLA allele|`./Data_preprocess/build_candidate_pools.ipynb`|
-  |`zeroshot_abc_set.csv`|zero-shot classical dataset|`./Data_preprocess/prepare_EG_peptides.ipynb`|
-  |`zs_new_abc_allele2candidate_pools.npy`|possible candidate peptide segments for each zero-shot classical HLA allele|`./Data_preprocess/build_candidate_pools.ipynb`|
-  |`zs_new_abc_allele2positive_segs.npy`|all possible peptide segments of positive peptides for each zero-shot classical HLA allele|`./Data_preprocess/build_candidate_pools.ipynb`|
+  |`zeroshot_allele2candidate_pools.npy`|possible candidate peptide segments for each zero-shot non-classical HLA allele|`./Data_preprocess/prepare_EG_peptides.ipynb`|
+  |`zeroshot_allele2positive_segs.npy`|all possible peptide segments of positive peptides for each zero-shot non-classical HLA allele|`./Data_preprocess/prepare_EG_peptides.ipynb`|
+  |`zeroshot_abc_set.csv`|zero-shot classical dataset|`./Data_preprocess/prepare_new_ABC_data.ipynb`|
+  |`zs_new_abc_allele2candidate_pools.npy`|possible candidate peptide segments for each zero-shot classical HLA allele|`./Data_preprocess/prepare_new_ABC_data.ipynb`|
+  |`zs_new_abc_allele2positive_segs.npy`|all possible peptide segments of positive peptides for each zero-shot classical HLA allele|`./Data_preprocess/prepare_new_ABC_data.ipynb`|
   |`Supertype_HLA.xls`|supertype category of HLA alleles|[paper link](http://link.springer.com/10.1007/978-1-4939-1115-8_17)|
   
   </p>
@@ -87,7 +84,7 @@ We've saved all data in [Google Drive `to be update`](). You can download and st
 #### 1. HPL-pan
 
 - training：enter `HPL/jobs/` directory and run `finetune1.sh` in the commandline
-  - our official HPL-pan model can be downloaded at [Google Drive `to be update`]()
+  - our official HPL-pan model can be downloaded at [Google Drive](https://drive.google.com/drive/folders/15EHFjg9ApcjaXWLMnhhJw9i_Qb4-VWQ_?usp=sharing)
   - we train using four RTX3090 GPUs with a total batch size of 256.
 - evaluating: enter `HPL/jobs/` directory and run `finetune1_eval.sh` in the commandline
 
