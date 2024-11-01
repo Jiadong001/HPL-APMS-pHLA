@@ -108,7 +108,7 @@ HPL-Allele consists of a group of HPL-Cluster models for a specific target HLA a
 ### APMS program
 
 <p align="center">
-    <img src="./README_figs/apms-algo.png" width="500"/>
+    <img src="./assets/apms-algo.png" width="500"/>
 <p>
 
 Refer to the `APMS/mutation_release.py` script for the complete algorithm implementation. Additionally, examples are available in the `APMS/run_mutation_release.ipynb` notebook.
