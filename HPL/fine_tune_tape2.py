@@ -3,7 +3,7 @@ New finetuning protocols for target allele:
     - gene-based
     - supertype-based
     - distance-based (eg. sequence similarity)
-Finetune on finetuned model(cat mean batch256 lr3e-5)
+Finetune on pan-specific model (cat mean batch256 lr3e-5)
 
 Fine-tune PLM on GPUs
     - Distributed DataParallel
@@ -39,7 +39,9 @@ from utils import f_mean, performances, transfer
 
 from tape import ProteinBertConfig
 from model_ft import meanTAPE, clsTAPE
-from transformers import AutoTokenizer, AutoModel   # for cluster
+
+from cluster_data import (seq_blosum_dist_cluster_dict, 
+                        seq_blosum_weighted_dist_cluster_dict)  # for cluster
 
 # Set Seed
 seed = 111
@@ -924,6 +926,12 @@ def prepare_main_task_loader(
                 hla_cluster_list = ABEG_seq_cluster_equal_dict[args.target_hla]
             elif args.num_cluster == "more":
                 hla_cluster_list = ABEG_seq_cluster_more_dict[args.target_hla]
+        elif args.distance_type == "seq_blosum_dist":
+            if args.num_cluster == "equal":
+                hla_cluster_list = seq_blosum_dist_cluster_dict[args.target_hla]
+        elif args.distance_type == "seq_blosum_weighted_dist":
+            if args.num_cluster == "equal":
+                hla_cluster_list = seq_blosum_weighted_dist_cluster_dict[args.target_hla]
         elif args.distance_type == "tape_repr_mean":
             if args.num_cluster == "equal":
                 hla_cluster_list = ABEG_semantic_cluster_equal_dict[args.target_hla]
@@ -1306,7 +1314,8 @@ def train(
                     formatted_today,
                 )
                 print("*****Path saver: ", new_model_name)
-                torch.save(model.module.eval().state_dict(), args.model_path + new_model_name)
+                torch.save(model.module.eval().state_dict(), 
+                            os.path.join(args.model_path, new_model_name))
 
         if local_rank == 0:
             print("\n")
@@ -1342,7 +1351,8 @@ def read_argument():
         "--dataset_type", type=str, choices=["full", "gene-based", "supertype-based", "distance-based"], default="full"
     )
     parser.add_argument(
-        "--distance_type", type=str, choices=["sequence", "tape_repr_mean"], default="sequence"
+        "--distance_type", type=str, choices=["sequence", "seq_blosum_dist", 
+                                              "seq_blosum_weighted_dist", "tape_repr_mean"], default="sequence"
     )
     parser.add_argument(
         "--num_cluster", type=str, choices=["less", "equal", "more"], default="equal"

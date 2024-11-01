@@ -435,7 +435,8 @@ def train(
                     formatted_today,
                 )
                 print("*****Path saver: ", new_model_name)
-                torch.save(model.module.eval().state_dict(), args.model_path + new_model_name)
+                torch.save(model.module.eval().state_dict(), 
+                            os.path.join(args.model_path, new_model_name))
 
         if local_rank == 0:
             print("\n")

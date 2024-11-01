@@ -683,6 +683,7 @@ if __name__ == "__main__":
     model.load_state_dict(
         torch.load(dir_saver + model_filename), strict = True)
     model.eval()
+    print(f"load model from {dir_saver + model_filename}")
 
     if args.eval_options == "all" or args.eval_options == "classify_fixed":
         (

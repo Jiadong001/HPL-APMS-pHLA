@@ -19,7 +19,7 @@ Here is our paper: `to be update`. This Repo provides a detailed project instruc
 
 ### Installation <img src="https://img.shields.io/badge/python-3.8-blue.svg"> <img src="https://img.shields.io/badge/pytorch-1.7.0-orange.svg"> <img src="https://img.shields.io/badge/tape_proteins-0.5-blue.svg">
 
-Check `requirements.txt` or set up a Python environment with the listed packages:
+Check `env.yml` or set up a Python environment with the listed packages:
 - python==3.8
 - numpy pandas scikit-learn tqdm
 - torch==1.7.0
@@ -87,6 +87,8 @@ We've uploaded all the data to [Google Drive](https://drive.google.com/drive/fol
   - our official HPL-pan model can be downloaded at [Google Drive](https://drive.google.com/drive/folders/15EHFjg9ApcjaXWLMnhhJw9i_Qb4-VWQ_?usp=sharing)
   - we train using four RTX3090 GPUs with a total batch size of 256.
 - evaluating: enter `HPL/jobs/` directory and run `finetune1_eval.sh` in the commandline
+
+- inference: see `HPL/inference_demo.ipynb`
 
 #### 2. HPL-Cluster
 
