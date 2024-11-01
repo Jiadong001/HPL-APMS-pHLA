@@ -3,6 +3,7 @@ import sys
 if ".." not in sys.path:
     sys.path.append("..")
 
+import os
 import numpy as np
 import pandas as pd
 import torch
@@ -43,6 +44,7 @@ def algorithm2a(
     if iteration > len(init_peptide):
         iteration = len(init_peptide)
 
+    os.makedirs(filename, exist_ok=True)
     if writein_file:
         record_file = open(f"./{filename}/al2a_{given_HLA}_len{len(init_peptide)}_iter{iteration}_model{len(models)}_{init_peptide}", "w")
         record_file.write(f">Source\n{init_peptide}")
