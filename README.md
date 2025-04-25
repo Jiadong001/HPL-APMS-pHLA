@@ -13,7 +13,9 @@ To address this, we propose the Hierarchical Progressive Learning (HPL) framewor
 
 Additionally, we develop the Automated Peptide Mutation Search (APMS) program. APMS automatically **modifies weak or non-binding peptides' amino acid residues** for any target HLA class I allele using the HPL prediction model. It successfully **generates high-affinity binder candidates for the target allele** in over 38.1% of test cases while adhering to mutation restrictions.
 
-Here is our paper: `to be update`. This Repo provides a detailed project instruction of our study.
+📄 Here is our paper: `to be update`. This Repo provides a detailed project instruction of our study.
+
+🌐 Our webserver is freely available at http://www.chattydog.top/bio/.  We welcome your feedback and suggestions!
 
 ## Get Started
 
@@ -32,7 +34,7 @@ Check `env.yml` or set up a Python environment with the listed packages:
 
 ### Data download
 
-We've uploaded all the data to [Google Drive](https://drive.google.com/drive/folders/15EHFjg9ApcjaXWLMnhhJw9i_Qb4-VWQ_?usp=sharing). You can download and store it wherever you prefer. **Just remember to update the `datapath` or `data_path` variable in the code with the correct path!**
+We've uploaded all the data to the [`data.zip` on Figshare](https://doi.org/10.6084/m9.figshare.28863005). You can download it and unzip it wherever you prefer. **Just remember to update the `datapath` or `data_path` variable in the code/scripts with the correct path!**
 
 <details>
   <summary>View the source and purpose of each downloaded document by clicking here.</summary>
@@ -81,11 +83,12 @@ We've uploaded all the data to [Google Drive](https://drive.google.com/drive/fol
 
 ### HPL
 
-#### 1. HPL-pan
+#### 1. HPL-Pan
 
 - training：enter `HPL/jobs/` directory and run `finetune1.sh` in the commandline
-  - our official HPL-pan model can be downloaded at [Google Drive](https://drive.google.com/drive/folders/15EHFjg9ApcjaXWLMnhhJw9i_Qb4-VWQ_?usp=sharing)
   - we train using four RTX3090 GPUs with a total batch size of 256.
+  - our official HPL-Pan model ckpt can be downloaded on [Figshare](https://doi.org/10.6084/m9.figshare.28863005) (`model.zip`), which you can use for customized HPL-Cluster training.
+
 - evaluating: enter `HPL/jobs/` directory and run `finetune1_eval.sh` in the commandline
 
 - inference: see `HPL/inference_demo.ipynb`
