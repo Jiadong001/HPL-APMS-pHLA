@@ -2,6 +2,8 @@
   <h1>HPL-APMS (pHLA)</h1>
   <p><strong>Hierarchical Progressive Learning for Zero-Shot Peptide-HLA Binding Prediction and Automated Antigenic Peptide Design</strong></p>
   <p>
+    <a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(25)00534-0"><img src="https://img.shields.io/badge/Cell%20Reports-Resource-%23228B22?labelColor=blue" alt="Cell Reports"></a>
+    <a href="https://doi.org/10.5281/zenodo.15279661"><img src="https://zenodo.org/badge/766420979.svg" alt="DOI"></a>
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
   </p>
 </div>
@@ -9,13 +11,19 @@
 ## Description
 Predicting peptide binding to human leukocyte antigen (HLA) alleles is crucial for immune response initiation, essential for therapies like vaccines. While current AI-based computing methods have advanced, they're **limited by training data covering less than 1% of known alleles**, causing issues with generalization to unseen alleles. 
 
-To address this, we propose the Hierarchical Progressive Learning (HPL) framework. With the help of protein pre-trained language models, HPL learns sequence patterns from universal proteins to specific peptide-HLA complexes, **improving prediction for unseen alleles by 60.8%** (by the way, 1414.0% for non-classical alleles!) compared to TransPHLA model. 
+<div style="display: flex; align-items: center;">
+  <div>
+  <p>To address this, we propose the Hierarchical Progressive Learning (HPL) framework. With the help of protein pre-trained language models, HPL learns sequence patterns from universal proteins to specific peptide-HLA complexes, <strong>improving prediction for unseen alleles by 60.8%</strong> (by the way, 1414.0% for non-classical alleles!) compared to TransPHLA model. </p>
+  <p>Additionally, we develop the Automated Peptide Mutation Search (APMS) program. APMS automatically <strong>modifies weak or non-binding peptides' amino acid residues</strong> for any target HLA class I allele using the HPL prediction model. It successfully <strong>generates high-affinity binder candidates for the target allele</strong> in over 38.1% of test cases while adhering to mutation restrictions.</p>
+  </div>
+  <img src="./assets/graphical_abstract.jpg" width="290px" style="margin-left: 6px;"/>
+</div>
 
-Additionally, we develop the Automated Peptide Mutation Search (APMS) program. APMS automatically **modifies weak or non-binding peptides' amino acid residues** for any target HLA class I allele using the HPL prediction model. It successfully **generates high-affinity binder candidates for the target allele** in over 38.1% of test cases while adhering to mutation restrictions.
+🎉 [Click Here](https://www.cell.com/cell-reports/fulltext/S2211-1247(25)00534-0) to see our online paper.
 
-📄 Here is our paper: `to be update`. This Repo provides a detailed project instruction of our study.
+🌐 Our webserver is also freely available at http://www.chattydog.top/bio/. We welcome your feedback and suggestions!
 
-🌐 Our webserver is freely available at http://www.chattydog.top/bio/.  We welcome your feedback and suggestions!
+🚀 This Repo provides a detailed project instruction of our study as follow.
 
 ## Get Started
 
@@ -27,9 +35,9 @@ Check `env.yml` or set up a Python environment with the listed packages:
 - torch==1.7.0
 - jupyter notebook seaborn matplotlib
 - tape-proteins==0.5
-  - TAPE model, a protein pre-trained language model used in our study, details see [the source repo](https://github.com/songlab-cal/tape)
+  - TAPE model, a protein pre-trained language model used in our study, details see [the source repo](https://github.com/songlab-cal/tape).
 - transformers==4.22.1
-  - **[Optional]** You can install it if you want to use other pre-trained protein language models, like [ProtBERT](https://github.com/agemagician/ProtTrans)
+  - **[Optional]** You can install it if you want to use other pre-trained protein language models, like [ProtBERT](https://github.com/agemagician/ProtTrans) or [ESM2](https://github.com/facebookresearch/esm).
 
 
 ### Data download
@@ -121,18 +129,34 @@ Refer to the `APMS/mutation_release.py` script for the complete algorithm implem
 If you found our code/work useful in your own research, please consider citing the following:
 
 ```bibtex
-to be update
+@article{zhu2025hierarchical,
+  title={Hierarchical progressive learning for zero-shot peptide-HLA binding prediction and automated antigenic peptide design},
+  author={Zhu, Xinyuan and Lu, Jiadong and Hu, Xinting and Jin, Tengchuan and Lu, Shan and Feng, Fuli},
+  journal={Cell Reports},
+  volume={44},
+  number={6},
+  year={2025},
+  publisher={Elsevier}
+}
 ```
 
 ## Contact Us
 
-Free feel to create an issue under this repo or contact `to be update [email]` if you have any questions!
+Free feel to create an issue under this repo if you have any questions!
 
 ## Acknowledgements
 
-- [tape-proteins](https://github.com/songlab-cal/tape) for pre-trained model
-- [TransPHLA](https://github.com/a96123155/TransPHLA-AOMP) for baseline model and common classical dataset
-- [IEDB](https://www.iedb.org/) for data collection
-- [paper [A large peptidome dataset improves HLA class I epitope prediction across most of the human population]](http://www.nature.com/articles/s41587-019-0322-9) for zero-shot classical dataset
-- [HLAncPred Web server](https://webs.iiitd.edu.in/raghava/hlancpred/down.php) / [paper [HLAncPred: a method for predicting promiscuous non-classical HLA binding sites]](https://academic.oup.com/bib/article/doi/10.1093/bib/bbac192/6587168) for zero-shot non-classical dataset
-- [paper [Classification of Human Leukocyte Antigen (HLA) Supertypes]](http://link.springer.com/10.1007/978-1-4939-1115-8_17) for the idea of supertype categorization
+- [tape-proteins](https://github.com/songlab-cal/tape) for the pre-trained model.
+- [TransPHLA](https://github.com/a96123155/TransPHLA-AOMP) for baseline model and common classical dataset.
+- [IEDB](https://www.iedb.org/) for data collection.
+- [paper [A large peptidome dataset improves HLA class I epitope prediction across most of the human population]](http://www.nature.com/articles/s41587-019-0322-9) for zero-shot classical dataset.
+- [HLAncPred Web server](https://webs.iiitd.edu.in/raghava/hlancpred/down.php) / [paper [HLAncPred: a method for predicting promiscuous non-classical HLA binding sites]](https://academic.oup.com/bib/article/doi/10.1093/bib/bbac192/6587168) for zero-shot non-classical dataset.
+- [paper [Classification of Human Leukocyte Antigen (HLA) Supertypes]](http://link.springer.com/10.1007/978-1-4939-1115-8_17) for the idea of supertype categorization.
+
+---
+
+To-do list:
+- [ ] Update data: remove unused data, update names (sync with code).
+- [ ] Update code: add a folder for ESM code.
+- [ ] Upload fullranking csv files.
+- [ ] Add more HPL-cluster checkpoints.
