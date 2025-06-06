@@ -11,13 +11,17 @@
 ## Description
 Predicting peptide binding to human leukocyte antigen (HLA) alleles is crucial for immune response initiation, essential for therapies like vaccines. While current AI-based computing methods have advanced, they're **limited by training data covering less than 1% of known alleles**, causing issues with generalization to unseen alleles. 
 
-<div style="display: flex; align-items: center;">
-  <div>
-  <p>To address this, we propose the Hierarchical Progressive Learning (HPL) framework. With the help of protein pre-trained language models, HPL learns sequence patterns from universal proteins to specific peptide-HLA complexes, <strong>improving prediction for unseen alleles by 60.8%</strong> (by the way, 1414.0% for non-classical alleles!) compared to TransPHLA model. </p>
-  <p>Additionally, we develop the Automated Peptide Mutation Search (APMS) program. APMS automatically <strong>modifies weak or non-binding peptides' amino acid residues</strong> for any target HLA class I allele using the HPL prediction model. It successfully <strong>generates high-affinity binder candidates for the target allele</strong> in over 38.1% of test cases while adhering to mutation restrictions.</p>
-  </div>
-  <img src="./assets/graphical_abstract.jpg" width="290px" style="margin-left: 6px;"/>
-</div>
+<table style="border:none;">
+  <tr>
+    <td valign="top" width=65%>
+      <p>To address this, we propose the Hierarchical Progressive Learning (HPL) framework. With the help of protein pre-trained language models, HPL learns sequence patterns from universal proteins to specific peptide-HLA complexes, <strong>improving prediction for unseen alleles by 60.8%</strong> (by the way, 1414.0% for non-classical alleles!) compared to TransPHLA model.</p>
+      <p>Additionally, we develop the Automated Peptide Mutation Search (APMS) program. APMS automatically <strong>modifies weak or non-binding peptides' amino acid residues</strong> for any target HLA class I allele using the HPL prediction model. It successfully <strong>generates high-affinity binder candidates for the target allele</strong> in over 38.1% of test cases while adhering to mutation restrictions.</p>
+    </td>
+    <td valign="center" width=35%>
+      <img src="./assets/graphical_abstract.jpg" style="padding-left: 2px;">
+    </td>
+  </tr>
+</table>
 
 🎉 [Click Here](https://www.cell.com/cell-reports/fulltext/S2211-1247(25)00534-0) to see our online paper.
 
