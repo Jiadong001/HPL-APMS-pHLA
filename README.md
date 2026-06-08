@@ -103,7 +103,7 @@ We've uploaded all the data to the [`data.zip` on Figshare](https://doi.org/10.6
 
 - evaluating: enter `HPL/jobs/` directory and run `finetune1_eval.sh` in the commandline
 
-- **inference/scoring: see `HPL/inference_demo.ipynb`**
+- **🚀 inference/scoring: see [`HPL/inference_demo.ipynb`](HPL/inference_demo.ipynb)**
 
 #### 2. HPL-Cluster
 
