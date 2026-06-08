@@ -93,7 +93,7 @@ We've uploaded all the data to the [`data.zip` on Figshare](https://doi.org/10.6
 
 ## Usage
 
-### HPL
+### 🛫 HPL
 
 #### 1. HPL-Pan
 
@@ -103,7 +103,7 @@ We've uploaded all the data to the [`data.zip` on Figshare](https://doi.org/10.6
 
 - evaluating: enter `HPL/jobs/` directory and run `finetune1_eval.sh` in the commandline
 
-- inference: see `HPL/inference_demo.ipynb`
+- **inference/scoring: see `HPL/inference_demo.ipynb`**
 
 #### 2. HPL-Cluster
 
@@ -120,7 +120,7 @@ HPL-Allele consists of a group of HPL-Cluster models for a specific target HLA a
 - evaluating: enter `HPL/jobs/` directory and run `ensemble_eval.sh` in the commandline
   - remember to provide model names of HPL-Cluster models in `Evaluation_HPL/evaluation_ft_ensemble.py` script
 
-### APMS program
+### 🛬 APMS program
 
 <p align="center">
     <img src="./assets/apms-algo.png" width="500"/>
@@ -156,11 +156,11 @@ Free feel to create an issue under this repo if you have any questions!
 - [paper [A large peptidome dataset improves HLA class I epitope prediction across most of the human population]](http://www.nature.com/articles/s41587-019-0322-9) for zero-shot classical dataset.
 - [HLAncPred Web server](https://webs.iiitd.edu.in/raghava/hlancpred/down.php) / [paper [HLAncPred: a method for predicting promiscuous non-classical HLA binding sites]](https://academic.oup.com/bib/article/doi/10.1093/bib/bbac192/6587168) for zero-shot non-classical dataset.
 - [paper [Classification of Human Leukocyte Antigen (HLA) Supertypes]](http://link.springer.com/10.1007/978-1-4939-1115-8_17) for the idea of supertype categorization.
-
+<!-- 
 ---
 
 To-do list:
 - [ ] Update data: remove unused data, update names (sync with code).
 - [ ] Update code: add a folder for ESM code.
 - [ ] Upload fullranking csv files.
-- [ ] Add more HPL-cluster checkpoints.
+- [ ] Add more HPL-cluster checkpoints. -->
